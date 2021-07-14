@@ -128,11 +128,11 @@ border: 5px solid #fff;
   <button class="menu" onclick="click_menu ()">Подготовка к ОГЭ</button>
   <button class="menu" onclick="click_menu ()">Курсы</button>
   <div id="work-list">
-    <div class="number-work">1</div>
-    <div class="number-work">2</div>
-    <div class="number-work">3</div>
-    <div class="number-work">4</div>
-    <div class="number-work">5</div>
+    <div class="number-work" onclick="work (1)">1</div>
+    <div class="number-work" onclick="work (2)">2</div>
+    <div class="number-work" onclick="work (3)">3</div>
+    <div class="number-work" onclick="work (4)">4</div>
+    <div class="number-work" onclick="work (5)">5</div>
   </div>
   <script>
     const d = document, s = self || window;
@@ -164,6 +164,20 @@ border: 5px solid #fff;
       
       d.querySelector('#work-list').style.opacity = '1';
       d.querySelector('#work-list').style.pointerEvents = 'auto';
+    }
+    
+    function work (from)
+    {
+      
+      d.querySelector('#work-list').removeAttribute('style');
+      
+      swith (from)
+      {
+      
+        case 1:
+          console.log(555);
+          break;
+      }
     }
   </script>
 </body>
