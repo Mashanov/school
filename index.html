@@ -174,7 +174,7 @@ display: none;
     {
       
       d.querySelector('#work-list').removeAttribute('style');
-      d.querySelector('#work-image').src = numbers[from][secision][0];
+      d.querySelector('#work-image').setAttribute('src', numbers[from][secision][0]);
       d.querySelector('#work-image').style.display = 'block';
     }
     
