@@ -99,13 +99,13 @@ border: 2px;
       setTimeout(function ()
       {
         d.querySelector('load').style.background = '#ffa50000';
-      }, 0);
+      }, 500);
       
       setTimeout(function ()
       {
         
         d.querySelector('load').remove ();
-      }, 1000);
+      }, 1500);
     }
 
     d.readyState == "complete" ? ready () : s.addEventListener("DOMContentLoaded", ready);
