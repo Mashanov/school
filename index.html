@@ -86,4 +86,20 @@ border: 2px;
   <img src="https://webstockreview.net/images/mr-clipart-ms-foundation-12.png" id="natural">
   <button class="menu">Подготовка к ОГЭ</button>
   <button class="menu">Курсы</button>
+  <script>
+    const d = document, s = self || window;
+    
+    function ready ()
+    {
+
+      d.querySelector('load').style.background = '#ffa50000';
+      setTimeout(function ()
+      {
+        
+        d.querySelector('load').remove ();
+      }, 1000);
+    }
+
+    d.addEventListener("DOMContentLoaded", ready);
+  </script>
 </body>
