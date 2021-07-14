@@ -174,9 +174,11 @@ top: 150px;
       d.querySelector('#work-list').style.pointerEvents = 'auto';
     }
     
-    function work (from)
+    function work (from = false)
     {
       
+      if (from === false || from >= 0 || from > 1 || typeof from != 'number') return null;
+
       d.querySelector('#work-list').removeAttribute('style');
       d.querySelector('#work-image').setAttribute('src', numbers[from]['decision'][0]);
       d.querySelector('#work-image').style.display = 'block';
