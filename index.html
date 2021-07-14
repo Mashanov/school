@@ -96,7 +96,11 @@ border: 2px;
     function ready ()
     {
 
-      d.querySelector('load').style.background = '#ffa50000';
+      setTimeout(function ()
+      {
+        d.querySelector('load').style.background = '#ffa50000';
+      }, 0);
+      
       setTimeout(function ()
       {
         
