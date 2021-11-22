@@ -71,50 +71,24 @@ transition: 0.3s border, 1s left, 0.5s background;
 
 .menu:hover {
 background: linear-gradient(0deg, #001fff, #00c4ff);
-border: 3px solid rgba(0,0,0,0);
+border: 0;
 }
 
-#work-list {
-width: 100%;
-max-width: 300px;
-left: 0;
-right: 0;
-margin: 0 auto;
-position: absolute;
-transition: 2s;
+div[data-name] {
 opacity: 0;
 pointer-events: none;
+transition: 1s;
+top: 200px;
 }
   
-.number-work {
-position: relative;
-width: 60px;
-height: 60px;
-text-align: center;
-margin: 15px;
-display: inline-block;
-border: 5px solid #ffb800;
-font-size: 130%;
-line-height: 50px;
-box-sizing: border-box;
-font-family: fantasy;
-border-radius: 10px;
-transition: 0.3s border;
-cursor: pointer;
+day-list {
+width: 50%;
+}
+  
+.day {
 background: #fff;
-}
-
-.number-work:hover {
-background: linear-gradient(0deg, #ff5e00, #fff700);
-border: 5px solid #fff;
-}
-
-#work-image {
-display: none;
 width: 100%;
-height: calc(100% - 150px);
-position: absolute;
-top: 150px;
+height: 50px;
 }
 </style>
 <body>
@@ -125,12 +99,13 @@ top: 150px;
   <img src="https://lh3.googleusercontent.com/pw/ACtC-3deVCqxO1mgT3w62xYbj6s9ma9FHp6S76GFM90Cv9yh4GcxW1kGoPPrgu5sIJUk7ilO0u9vSv5QQtqm6eRHYJp_DimeT-phB7f27Gf44CDpzenWceAIs5o6j8GV1wkaXjQbH56B959tKY06syNwJx7R=w490-h652-no?authuser=0" id="Dima">
   <button class="menu" onclick="click_menu ()">Задания</button>
   <button class="menu">Вебинары</button>
-  <div id="work-list">
-    <div class="number-work" onclick="work (1)">1</div>
-    <div class="number-work" onclick="work (2)">2</div>
-    <div class="number-work" onclick="work (3)">3</div>
-    <div class="number-work" onclick="work (4)">4</div>
-    <div class="number-work" onclick="work (5)">5</div>
+  <div data-name="tasks">
+    <day-list>
+      <div class="day">День 1</div>
+      <div class="day">День 2</div>
+      <div class="day">День 3</div>
+    </day-list>
+    <div id="progress"></div>
   </div>
   <img id="work-image"></div>
   <script>
@@ -160,26 +135,8 @@ top: 150px;
       d.querySelectorAll('.menu')[0].style.left = '-70%';
       d.querySelectorAll('.menu')[1].style.left = '70%';
       
-      d.querySelector('#work-list').style.opacity = '1';
-      d.querySelector('#work-list').style.pointerEvents = 'auto';
+      d.querySelector('div[data-name="tasks"]').style.opacity = '1';
+      d.querySelector('div[data-name="tasks"]').style.pointerEvents = 'auto';
     }
-    
-    function work (from = false)
-    {
-      
-      if (from === false || from <= 0 || from > 1 || typeof from != 'number') return null;
-
-      d.querySelector('#work-list').removeAttribute('style');
-      d.querySelector('#work-image').setAttribute('src', numbers[from]['decision'][0]);
-      d.querySelector('#work-image').style.display = 'block';
-    }
-    
-    let numbers = {
-
-      1: {
-        decision: ['https://ds05.infourok.ru/uploads/ex/098e/0014f11d-83e89b6a/img2.jpg'],
-        works: {}
-      }
-    };
   </script>
 </body>
