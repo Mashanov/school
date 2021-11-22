@@ -104,6 +104,25 @@ transition: 0.5s background;
 .day:hover {
 background: linear-gradient(0deg, #001fff, #00c4ff);
 }
+  
+.work-block {
+position: absolute;
+left: 5%;
+width: 90%;
+height: auto;
+padding: 30px;
+box-sizing: border-box;
+background: #fff;
+}
+  
+#go-result {
+position: relative;
+background: linear-gradient(0deg, #001fff, #00c4ff);
+width: fit-content;
+padding: 10px;
+color: #fff;
+text-shadow: #000 1px 0 1px;
+}
 </style>
 <body>
   <load>
@@ -126,7 +145,7 @@ background: linear-gradient(0deg, #001fff, #00c4ff);
       <div class="">Задание №1</div>
       <div class="">Найдите, сколько процентов составляет число 3,78 от 27</div>
       <input placeholder="Введите ваш ответ..">
-      <div onclick="result ('14', 'Попробуйте 3.78 * 100 / 27')">Проверить</div>
+      <div id="go-result" onclick="result ('14', 'Попробуйте 3.78 * 100 / 27')">Проверить</div>
       <div id="result"></div>
     </div>
   </div>
@@ -169,6 +188,12 @@ background: linear-gradient(0deg, #001fff, #00c4ff);
       d.querySelector('div[data-name="tasks"]').style.pointerEvents = 'none';
       d.querySelector('div[data-name="day"]').style.opacity = '1';
       d.querySelector('div[data-name="day"]').style.pointerEvents = 'auto';
+    }
+
+    function result (success, error){
+    
+      if (d.querySelector('input').value == success) d.querySelector('#result').innerTEXT = 'Вы молодец, все правильно';
+      else d.querySelector('#result').innerTEXT = 'Подсказка для особо одаренных: ' + error;
     }
   </script>
 </body>
