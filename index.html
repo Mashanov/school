@@ -66,12 +66,12 @@ letter-spacing: 3px;
 font-family: cursive;
 background: #fff0;
 box-shadow: #00000029 0px 10px 10px;
-transition: 0.3s border, 1s left;
+transition: 0.3s border, 1s left, 0.5s background;
 }
 
 .menu:hover {
-background: linear-gradient(0deg, #ff5e00, #fff700);
-border: 2px;
+background: linear-gradient(0deg, #001fff, #00c4ff);
+border: 3px solid rgba(0,0,0,0);
 }
 
 #work-list {
@@ -156,7 +156,6 @@ top: 150px;
     function click_menu ()
     {
 
-      d.querySelector('#natural').style.left = '-300px';
       d.querySelector('#Dima').style.right = '-300px';
       d.querySelectorAll('.menu')[0].style.left = '-70%';
       d.querySelectorAll('.menu')[1].style.left = '70%';
